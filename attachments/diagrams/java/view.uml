@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>razifx.java.view</OriginalElement>
+  <nodes>
+    <node x="4253.0" y="1528.0">razifx.java.view.AssetsController</node>
+    <node x="2167.0" y="1528.0">razifx.java.view.SupllierController</node>
+    <node x="1079.0" y="1528.0">razifx.java.view.CustomerController</node>
+    <node x="2756.0" y="3440.0">razifx.java.view.ProductController</node>
+    <node x="629.0" y="4286.0">razifx.java.view.SalariesController</node>
+    <node x="1478.0" y="0.0">razifx.java.view.EmployeesController</node>
+    <node x="1832.0" y="3440.0">razifx.java.view.CheckPayeeController</node>
+    <node x="1066.0" y="2528.0">razifx.java.view.OrderingController</node>
+    <node x="3914.0" y="0.0">razifx.java.view.PaymentController</node>
+    <node x="2058.0" y="2528.0">razifx.java.view.BankAccountsController</node>
+    <node x="0.0" y="2528.0">razifx.java.view.PurchasepaymentController</node>
+    <node x="0.0" y="1528.0">razifx.java.view.SalaryRegController</node>
+    <node x="1925.0" y="4286.0">razifx.java.view.AboutController</node>
+    <node x="3494.0" y="3440.0">razifx.java.view.JobController</node>
+    <node x="3240.0" y="1528.0">razifx.java.view.LeaveRegistrationController</node>
+    <node x="0.0" y="4286.0">razifx.java.view.ExpenseIncomeController</node>
+    <node x="4192.0" y="3440.0">razifx.java.view.CheckDepositController</node>
+    <node x="1277.0" y="4286.0">razifx.java.view.LeavesController</node>
+    <node x="3130.0" y="4286.0">razifx.java.view.RegistrationController</node>
+    <node x="2760.0" y="4286.0">razifx.java.view.DeleteAccountRequestController</node>
+    <node x="0.0" y="3440.0">razifx.java.view.ChecksController</node>
+    <node x="3100.0" y="2528.0">razifx.java.view.ExpensesController</node>
+    <node x="2708.0" y="0.0">razifx.java.view.OrderRegistrationController</node>
+    <node x="4080.0" y="2528.0">razifx.java.view.OrderDetailController</node>
+    <node x="0.0" y="0.0">razifx.java.view.MainController</node>
+    <node x="3749.0" y="4286.0">razifx.java.view.login</node>
+    <node x="3467.0" y="4286.0">razifx.java.view.TutorialsController</node>
+    <node x="983.0" y="3440.0">razifx.java.view.ChecksReportController</node>
+    <node x="2351.0" y="4286.0">razifx.java.view.SelectFiscalYearController</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="0.12244476564113153" x="2573.0" y="2411.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

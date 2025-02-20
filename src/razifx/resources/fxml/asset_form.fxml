@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" stylesheets="@../styles/stylesheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="razifx.java.view.AssetsController">
+    <children>
+        <TableView fx:id="assetsTable" layoutY="392.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="330.0" prefWidth="1282.0" styleClass="text-arial-black" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="392.0">
+            <columns>
+                <TableColumn fx:id="assetIdColumn" prefWidth="71.7347412109375" text="شناسه" />
+                <TableColumn fx:id="assetNameColumn" prefWidth="189.2652587890625" text="نام دارایی" />
+                <TableColumn fx:id="assetTypeColumn" prefWidth="203.95361328125" text="نوع دارایی" />
+                <TableColumn fx:id="purchaseDateColumn" prefWidth="142.1199951171875" text="تاریخ خرید" />
+                <TableColumn fx:id="purchasePriceColumn" prefWidth="281.885498046875" text="قیمت خرید" />
+                <TableColumn fx:id="storageLocationColumn" prefWidth="268.24639892578125" text="محل نگهداری" />
+                <TableColumn fx:id="statusColumn" prefWidth="126.25860595703125" text="وضعیت" />
+            </columns>
+        </TableView>
+      <Pane layoutX="374.0" layoutY="90.0" prefHeight="282.0" prefWidth="764.0">
+         <children>
+              <GridPane alignment="CENTER" hgap="10.0" layoutX="359.0" layoutY="27.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="107.0" prefWidth="309.0" styleClass="text-arial-black" vgap="10.0">
+                  <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="154.0" minWidth="79.0" prefWidth="79.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="336.0" minWidth="200.0" prefWidth="336.0" />
+                  </columnConstraints>
+                  <rowConstraints>
+                      <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  </rowConstraints>
+                  <children>
+                      <Label prefHeight="39.0" prefWidth="158.0" styleClass="text-arial-black" text="نام دارایی" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                      <TextField fx:id="assetNameField" styleClass="text-arial-black" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                      <Label prefHeight="63.0" prefWidth="158.0" styleClass="text-arial-black" text="نوع دارایی" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                      <TextField fx:id="assetTypeField" styleClass="text-arial-black" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                      <Label prefHeight="63.0" prefWidth="158.0" styleClass="text-arial-black" text="تاریخ خرید" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <HBox prefHeight="30.0" prefWidth="238.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <children>
+                        <TextField fx:id="dayOfDateField" prefHeight="30.0" prefWidth="46.0" promptText="روز" />
+                        <ComboBox fx:id="mounthOfDateField" prefHeight="29.0" prefWidth="87.0" promptText="ماه" />
+                        <TextField fx:id="yearOfDateField" prefHeight="40.0" prefWidth="82.0" promptText="سال" />
+                     </children>
+                  </HBox>
+                  </children>
+              </GridPane>
+            <GridPane alignment="CENTER" hgap="10.0" layoutX="25.0" layoutY="26.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="74.0" prefWidth="318.0" styleClass="text-arial-black" vgap="10.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="154.0" minWidth="77.0" prefWidth="92.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="338.0" minWidth="200.0" prefWidth="323.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="65.0" minHeight="30.0" prefHeight="60.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                      <TextField fx:id="purchasePriceField" promptText="ریال" styleClass="text-arial-black" GridPane.columnIndex="1" />
+                      <ComboBox fx:id="statusComboBox" prefHeight="29.0" prefWidth="195.0" styleClass="text-arial-black" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                </ComboBox>
+                      <Label prefHeight="48.0" prefWidth="158.0" styleClass="text-arial-black" text="وضعیت" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                      <Label prefHeight="59.0" prefWidth="158.0" styleClass="text-arial-black" text="قیمت خرید">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
+                <Label alignment="CENTER_RIGHT" layoutX="592.0" layoutY="151.0" prefHeight="46.0" prefWidth="92.0" styleClass="text-arial-black" text="محل نگهداری">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="storageLocationField" layoutX="109.0" layoutY="166.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="99.0" prefWidth="470.0" styleClass="text-arial-black" />
+         </children>
+         <styleClass>
+            <String fx:value="text-arial-black" />
+            <String fx:value="fields-borders" />
+         </styleClass>
+      </Pane>
+      <Pane layoutX="21.0" layoutY="93.0" prefHeight="281.0" prefWidth="332.0">
+         <children>
+            <Button fx:id="clear_form" alignment="CENTER" layoutX="175.0" layoutY="126.0" mnemonicParsing="false" onAction="#clearFieledButton" prefHeight="57.0" prefWidth="141.0" style="-fx-background-color: #008000;" styleClass="text-arial-black" text="پاک کردن فرم" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="48.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/clear_icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="saveButton" alignment="CENTER" layoutX="179.0" layoutY="59.0" onAction="#saveAsset" prefHeight="57.0" prefWidth="141.0" text="ذخیره">
+               <graphic>
+                  <ImageView fitHeight="48.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/save_icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <styleClass>
+                  <String fx:value="text-arial-black" />
+                  <String fx:value="menubar-text-color" />
+               </styleClass>
+            </Button>
+            <Button fx:id="updateButton" alignment="CENTER" layoutX="11.0" layoutY="59.0" onAction="#updateAsset" prefHeight="57.0" prefWidth="141.0" text="بروزرسانی">
+               <styleClass>
+                  <String fx:value="menubar-text-color" />
+                  <String fx:value="text-arial-black" />
+               </styleClass>
+               <graphic>
+                  <ImageView fitHeight="48.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/update_icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="deleteButton" alignment="CENTER" layoutX="14.0" layoutY="127.0" onAction="#deleteAsset" prefHeight="57.0" prefWidth="141.0" text="حذف">
+               <styleClass>
+                  <String fx:value="text-arial-black" />
+                  <String fx:value="menubar-text-color" />
+               </styleClass>
+               <graphic>
+                  <ImageView fitHeight="48.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/delete_icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="reportButton" layoutX="107.0" layoutY="195.0" mnemonicParsing="false" onAction="#printReport" prefHeight="39.0" prefWidth="118.0" text="گزارش">
+               <graphic>
+                  <ImageView fitHeight="48.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/printer_icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+         <styleClass>
+            <String fx:value="fields-borders" />
+            <String fx:value="text-arial-black" />
+         </styleClass>
+      </Pane>
+      <Pane layoutX="24.0" layoutY="25.0" prefHeight="38.0" prefWidth="1252.0" styleClass="sidebar-color">
+         <children>
+            <Label layoutX="1105.0" layoutY="4.0" prefHeight="29.0" prefWidth="137.0" styleClass="text-arial-black" text="نرم افزار حسابداری رازی" />
+            <Label contentDisplay="CENTER" layoutX="558.0" layoutY="-1.0" prefHeight="39.0" prefWidth="137.0" text="مدیریت دارایی ها">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="text-arial-black" />
+                  <String fx:value="title-text-color" />
+               </styleClass>
+            </Label>
+         </children>
+      </Pane>
+      <Button fx:id="move_main" layoutX="1202.0" layoutY="77.0" mnemonicParsing="false" onAction="#moveToMain" prefHeight="32.0" prefWidth="21.0" styleClass="text-arial-black" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/main_icon_stage.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Label alignment="CENTER" layoutX="221.0" layoutY="85.0" prefHeight="20.0" prefWidth="118.0" text="عملیات">
+         <styleClass>
+            <String fx:value="text-arial-black" />
+            <String fx:value="background-color" />
+         </styleClass>
+      </Label>
+      <Label alignment="CENTER" layoutX="936.0" layoutY="81.0" prefHeight="20.0" prefWidth="186.0" text="اطلاعات مورد نیاز">
+         <styleClass>
+            <String fx:value="text-arial-black" />
+            <String fx:value="background-color" />
+         </styleClass>
+      </Label>
+    </children>
+   <styleClass>
+      <String fx:value="background-color" />
+      <String fx:value="text-arial-black" />
+   </styleClass>
+</AnchorPane>

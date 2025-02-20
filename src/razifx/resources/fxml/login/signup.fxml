@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="350.0" prefWidth="650.0" stylesheets="@../../styles/stylesheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="razifx.java.view.login.SignUp">
+   <children>
+      <Pane layoutX="227.0" layoutY="7.0" prefHeight="337.0" prefWidth="403.0">
+         <children>
+            <GridPane hgap="10.0" layoutX="42.0" layoutY="23.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="209.0" prefWidth="345.0" styleClass="text-arial-black" vgap="10.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="196.0" minWidth="55.0" prefWidth="123.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="345.0" minWidth="200.0" prefWidth="277.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <TextField fx:id="firstNameField" prefHeight="54.0" prefWidth="291.0" styleClass="text-arial-black" GridPane.columnIndex="1" />
+                  <TextField fx:id="lastNameField" prefHeight="73.0" prefWidth="291.0" styleClass="text-arial-black" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="companyNameField" prefHeight="51.0" prefWidth="291.0" styleClass="text-arial-black" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="emailField" prefHeight="57.0" prefWidth="291.0" promptText="gmail.com@" styleClass="text-arial-black" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="usernameField" prefHeight="38.0" prefWidth="291.0" promptText="با حروف شروع شود" styleClass="text-arial-black" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <PasswordField fx:id="passwordField" prefHeight="38.0" prefWidth="291.0" promptText="حداقل ‌۸ کاراکتر" styleClass="text-arial-black" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Label prefHeight="52.0" prefWidth="152.0" styleClass="text-arial-black" text="نام">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="52.0" prefWidth="152.0" styleClass="text-arial-black" text="نام خانوادگی" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="52.0" prefWidth="152.0" styleClass="text-arial-black" text="نام کسب و کار" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="52.0" prefWidth="152.0" styleClass="text-arial-black" text="ایمیل" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="52.0" prefWidth="152.0" styleClass="text-arial-black" text="نام کاربری" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="52.0" prefWidth="152.0" styleClass="text-arial-black" text="رمز عبور" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
+            <CheckBox fx:id="privacyTermsCheckBox" alignment="CENTER" layoutX="42.0" layoutY="261.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="319.0" styleClass="text-arial-black" text="بنده شرایط و ضوابط استفاده از نرم افزار را می پذیرم">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </CheckBox>
+            <Button fx:id="signUpButton" layoutX="42.0" layoutY="294.0" mnemonicParsing="false" onAction="#signUp" text="ساخت اکانت" textFill="WHITE">
+               <styleClass>
+                  <String fx:value="button-color" />
+                  <String fx:value="text-arial-black" />
+               </styleClass></Button>
+         </children>
+         <styleClass>
+            <String fx:value="background-color" />
+            <String fx:value="text-arial-black" />
+            <String fx:value="border-color" />
+         </styleClass></Pane>
+      <Pane prefHeight="350.0" prefWidth="204.0">
+         <children>
+            <ImageView fitHeight="108.0" fitWidth="109.0" layoutX="56.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/account_logo.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="35.0" layoutY="110.0" text="ساخت حساب کاربری">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="text-arial-black" />
+                  <String fx:value="title-text-color" />
+               </styleClass>
+            </Label>
+            <Label layoutX="50.0" layoutY="134.0" text="نرم افزار رازی">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="text-arial-black" />
+                  <String fx:value="title-text-color" />
+               </styleClass>
+            </Label>
+            <Label layoutX="105.0" layoutY="178.0" styleClass="text-arial-black" text="شرایط و ضوابط :">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <Label layoutX="38.0" layoutY="201.0" styleClass="text-arial-black" text="۰ اطلاعات وارد شده باید صحیح باشد">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label layoutX="6.0" layoutY="219.0" styleClass="text-arial-black" text="۰ کاربر مسئول نحوه استفاده از نرم‌افزار است">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label layoutX="8.0" layoutY="238.0" styleClass="text-arial-black" text=". نرم افزار یک پروژه دانشگاهی و رایگان است">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label layoutX="88.0" layoutY="275.0" styleClass="text-arial-black" text="اطلاعات شما نمی پذیرد">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label layoutX="26.0" layoutY="293.0" styleClass="text-arial-black" text="۰ این نسخه آزمایشی نرم افزار می باشد.">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label layoutX="24.0" layoutY="312.0" styleClass="text-arial-black" text="۰ درصورت مشاهده باگ حتما گزارش کنید">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Label layoutX="4.0" layoutY="332.0" styleClass="text-arial-black" text="۰ درصورت استفاده غلط و نابجا اکانت شما بن خواهد شد">
+               <font>
+                  <Font size="8.0" />
+               </font>
+            </Label>
+         </children>
+         <styleClass>
+            <String fx:value="sidebar-color" />
+            <String fx:value="text-arial-black" />
+         </styleClass>
+      </Pane>
+      <Label layoutX="5.0" layoutY="257.0" styleClass="text-arial-black" text=". توسعه‌دهنده نرم‌افزار هیچ مسئولیتی را قبال ">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="ap" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../styles/stylesheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="razifx.java.view.MainController">
+   <children>
+      <GridPane prefHeight="40.0" prefWidth="1280.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="634.69384765625" minWidth="10.0" prefWidth="179.75003051757812" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="1143.0413208007812" minWidth="10.0" prefWidth="1100.7499694824219" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <MenuBar fx:id="menuBar" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="1100.0" GridPane.columnIndex="1">
+               <menus>
+                  <Menu mnemonicParsing="false" text="حسابداری">
+                     <items>
+                        <MenuItem fx:id="bank_accounts" mnemonicParsing="false" onAction="#mbank_accounts" text="حساب های بانکی" />
+                        <MenuItem fx:id="assets" mnemonicParsing="false" onAction="#massets" text="مدیریت دارایی" />
+                        <MenuItem fx:id="expenses" mnemonicParsing="false" onAction="#mexpenses" text="مدیریت هزینه ها" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="اشخاص">
+                     <items>
+                        <MenuItem fx:id="employees" mnemonicParsing="false" onAction="#memployees" text="کارمندان" />
+                        <MenuItem fx:id="customers" mnemonicParsing="false" onAction="#mcustomers" text="مشتریان" />
+                        <MenuItem fx:id="suppliers" mnemonicParsing="false" onAction="#msuppliers" text="تامین کنندگان" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="مشاغل و کالاها">
+                     <items>
+                        <MenuItem fx:id="jobs" mnemonicParsing="false" onAction="#mjobs" text="شغل ها" />
+                        <MenuItem fx:id="products" mnemonicParsing="false" onAction="#mproducts" text="محصولات" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="حقوق و دستمزد">
+                     <items>
+                        <MenuItem fx:id="leaves" mnemonicParsing="false" onAction="#mleaves" text="ثبت مرخصی" />
+                        <MenuItem fx:id="salaries" mnemonicParsing="false" onAction="#msalaries" text="پرداخت حقوق" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="فاکتور خرید و فروش">
+                     <items>
+                        <MenuItem fx:id="orders" mnemonicParsing="false" onAction="#morders" text="سفارشات" />
+                        <MenuItem fx:id="payments" mnemonicParsing="false" onAction="#mpayments" text="پرداخت ها" />
+                        <MenuItem fx:id="purchase_payments" mnemonicParsing="false" onAction="#mpurchase_payments" text="فاکتور خرید" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text=" چک ها">
+                    <items>
+                        <MenuItem fx:id="checks" mnemonicParsing="false" onAction="#mchecks" text="چک های دریافتی" />
+                      <MenuItem fx:id="checkpeyee" mnemonicParsing="false" onAction="#mcheckPayee" text="چک های پرداختی" />
+                        <MenuItem fx:id="depositChecks" mnemonicParsing="false" onAction="#mdepositChecks" text="ثبت وصول چک" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="گزارش گیری">
+                     <items>
+                        <MenuItem fx:id="mincome_expense" mnemonicParsing="false" onAction="#incomeExpense" text="درآمد و هزینه" />
+                        <MenuItem fx:id="checks_report" mnemonicParsing="false" onAction="#mchecks_report" text="چک ها" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="راهنما">
+                     <items>
+                        <MenuItem fx:id="about_razi" mnemonicParsing="false" onAction="#mabout_razi" text="درباره نرم افزار" />
+                        <MenuItem fx:id="delete_account" mnemonicParsing="false" onAction="#mdelete_account" text="حذف حساب کاربری" />
+                     </items>
+                  </Menu>
+               </menus>
+               <styleClass>
+                  <String fx:value="sidebar-color" />
+                  <String fx:value="text-arial-black" />
+               </styleClass>
+            </MenuBar>
+            <HBox alignment="CENTER">
+               <children>
+                  <Label fx:id="date_time" alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="93.0" text="تاریخ">
+                     <styleClass>
+                        <String fx:value="text-arial-black" />
+                        <String fx:value="sidebar-color" />
+                     </styleClass>
+                  </Label>
+                  <Label fx:id="showTime" alignment="CENTER" prefHeight="40.0" prefWidth="92.0" text="time">
+                     <styleClass>
+                        <String fx:value="text-arial-black" />
+                        <String fx:value="sidebar-color" />
+                     </styleClass>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </GridPane>
+      <Pane fx:id="mainPameForWindow" layoutY="40.0" prefHeight="680.0" prefWidth="1280.0">
+         <children>
+            <Pane layoutX="759.0" layoutY="49.0" prefHeight="111.0" prefWidth="508.0">
+               <children>
+                  <Label layoutX="116.0" layoutY="28.0" prefHeight="58.0" prefWidth="293.0" text="نرم افزار حسابداری رازی">
+                     <font>
+                        <Font name="Arial Black" size="28.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="text-arial-black" />
+                        <String fx:value="title-text-color" />
+                     </styleClass>
+                  </Label>
+                  <Label fx:id="version_label_main" layoutX="36.0" layoutY="29.0" text="1.10.10">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="text-arial-black" />
+                        <String fx:value="title-text-color" />
+                     </styleClass>
+                  </Label>
+                  <ImageView fitHeight="86.0" fitWidth="73.0" layoutX="414.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Fatimah-bint-Musa.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="21.0" layoutY="59.0" prefHeight="20.0" prefWidth="89.0" text="نسخه آزمایشی">
+                     <styleClass>
+                        <String fx:value="text-arial-black" />
+                        <String fx:value="title-text-color" />
+                     </styleClass>
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+               <styleClass>
+                  <String fx:value="background-color" />
+                  <String fx:value="border-color" />
+                  <String fx:value="text-arial-black" />
+               </styleClass>
+            </Pane>
+            <Pane layoutX="759.0" layoutY="181.0" prefHeight="203.0" prefWidth="508.0">
+               <children>
+                  <GridPane layoutX="92.0" layoutY="38.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="136.0" prefWidth="343.0" styleClass="background-color" stylesheets="@../styles/main_style.css">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="495.0" minWidth="10.0" prefWidth="261.0174560546875" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="280.0" minWidth="10.0" prefWidth="81.9825439453125" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <ImageView fitHeight="75.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+                           <image>
+                              <Image url="@../images/user_main_icon.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="71.0" fitWidth="81.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <image>
+                              <Image url="@../images/bussines_icon_1.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="welcome_super_user" alignment="CENTER" prefHeight="140.0" prefWidth="496.0" styleClass="text-arial-black" text="کاربر">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="welcome_company" alignment="CENTER" prefHeight="69.0" prefWidth="343.0" styleClass="text-arial-black" text="شرکت یا کارخانه یا کارگاه" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </GridPane>
+               </children>
+               <styleClass>
+                  <String fx:value="fields-borders" />
+                  <String fx:value="text-arial-black" />
+                  <String fx:value="border-color" />
+               </styleClass>
+            </Pane>
+            <Label alignment="CENTER" layoutX="1142.0" layoutY="173.0" prefHeight="20.0" prefWidth="112.0" text="اطلاعات کاربر">
+               <styleClass>
+                  <String fx:value="background-color" />
+                  <String fx:value="text-arial-black" />
+               </styleClass>
+            </Label>
+            <Label alignment="CENTER" layoutX="1144.0" layoutY="40.0" prefHeight="20.0" prefWidth="112.0" text="اطلاعات نرم افزار">
+               <styleClass>
+                  <String fx:value="background-color" />
+                  <String fx:value="text-arial-black" />
+               </styleClass>
+            </Label>
+            <Pane fx:id="help_pane" layoutX="758.0" layoutY="415.0" prefHeight="256.0" prefWidth="510.0">
+               <styleClass>
+                  <String fx:value="text-arial-black" />
+                  <String fx:value="fields-borders" />
+               </styleClass>
+               <children>
+                  <Label alignment="CENTER" layoutX="19.0" layoutY="11.0" prefHeight="38.0" prefWidth="475.0" styleClass="text-arial-black" text="مدیریت مشتریان --&gt; ثبت شغل --&gt; ثبت کارمند --&gt; ثبت مرخصی + ثبت حقوق و دستمزد">
+                     <font>
+                        <Font size="12.0" />
+                     </font></Label>
+                  <Label alignment="CENTER" layoutX="18.0" layoutY="41.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="38.0" prefWidth="475.0" styleClass="text-arial-black" text="مدیریت حساب --&gt; هزینه ها ٬ حقوق و دستمزد ٬ فاکتور خرید">
+                     <font>
+                        <Font size="12.0" />
+                     </font></Label>
+                  <Label alignment="CENTER" layoutX="37.0" layoutY="74.0" prefHeight="38.0" prefWidth="460.0" styleClass="text-arial-black" text="مدیریت مشتریان --&gt; ثبت محصول --&gt; ثبت مشتری --&gt; ثبت سفارش --&gt; ثبت پرداخت">
+                     <font>
+                        <Font size="12.0" />
+                     </font></Label>
+                  <Label layoutX="9.0" layoutY="102.0" prefHeight="38.0" prefWidth="261.0" styleClass="text-arial-black" text="--&gt; ثبت چک پرداختی">
+                     <font>
+                        <Font size="12.0" />
+                     </font></Label>
+                  <Label alignment="CENTER" layoutX="14.0" layoutY="140.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="38.0" prefWidth="475.0" styleClass="text-arial-black" text="مدیریت تامین کنندگان --&gt; ثبت تامین کننده --&gt; ثبت فاکتور خرید + ثبت چک پرداختی">
+                     <font>
+                        <Font size="12.0" />
+                     </font></Label>
+                  <Label alignment="CENTER" layoutX="325.0" layoutY="108.0" prefHeight="38.0" prefWidth="173.0" styleClass="text-arial-black" text="مدیریت دارایی --&gt; ثبت دارایی">
+                     <font>
+                        <Font size="12.0" />
+                     </font></Label>
+                  <Button fx:id="hideHelpButton" layoutX="3.0" layoutY="225.0" mnemonicParsing="false" onAction="#handleHideHelpPane" styleClass="text-arial-black" text="پنهان کردن" />
+                  <Label alignment="CENTER" layoutX="351.0" layoutY="-11.0" prefHeight="20.0" prefWidth="149.0" text="نحوه ی استفاده">
+                     <styleClass>
+                        <String fx:value="background-color" />
+                        <String fx:value="text-arial-black" />
+                     </styleClass>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="113.0" layoutY="170.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="29.0" prefWidth="388.0" styleClass="text-arial-black" text="گزارش هرینه و درآمد نیازمند ثبت داده های هزینه٬ حقوق کارمندان">
+                     <font>
+                        <Font size="12.0" />
+                     </font></Label>
+                  <Label alignment="CENTER" layoutX="132.0" layoutY="191.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="38.0" prefWidth="359.0" styleClass="text-arial-black" text="ثبت خرید٬ثبت سفارش و پرداخت ها می باشد.">
+                     <font>
+                        <Font size="12.0" />
+                     </font></Label>
+                  <Label alignment="CENTER" layoutX="104.0" layoutY="225.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="29.0" prefWidth="359.0" styleClass="text-arial-black" text="محدوده پردازش واحد پولی تا دوازده۱۲ رقم می باشد." textFill="RED">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="14.0" layoutY="340.0" prefHeight="310.0" prefWidth="260.0">
+               <styleClass>
+                  <String fx:value="fields-borders" />
+                  <String fx:value="title-text-color" />
+               </styleClass>
+               <children>
+                  <Label alignment="CENTER" layoutX="168.0" layoutY="-11.0" prefHeight="20.0" prefWidth="81.0" text="تبلیغات">
+                     <styleClass>
+                        <String fx:value="background-color" />
+                        <String fx:value="text-arial-black" />
+                     </styleClass>
+                  </Label>
+                  <ImageView fx:id="server_ad" fitHeight="280.0" fitWidth="230.0" layoutX="15.0" layoutY="15.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </Pane>
+         </children>
+         <styleClass>
+            <String fx:value="text-arial-black" />
+            <String fx:value="menubar-text-color" />
+         </styleClass>
+      </Pane>
+   </children>
+   <styleClass>
+      <String fx:value="background-color" />
+      <String fx:value="text-arial-black" />
+   </styleClass>
+</AnchorPane>

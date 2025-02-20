@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" styleClass="background-color" stylesheets="@../styles/stylesheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="razifx.java.view.BankAccountsController">
+    <children>
+        <TableView fx:id="bankAccountsTable" layoutY="388.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="332.0" prefWidth="1280.0" styleClass="text-arial-black" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="388.0">
+            <columns>
+                <TableColumn fx:id="bankAccountIdColumn" prefWidth="50.0" text="شناسه" />
+                <TableColumn fx:id="bankNameColumn" prefWidth="150.0" text="نام بانک" />
+                <TableColumn fx:id="accountNumberColumn" prefWidth="202.0" text="شماره حساب" />
+                <TableColumn fx:id="cardNumberColumn" prefWidth="194.0" text="شماره کارت" />
+                <TableColumn fx:id="accountHolderNameColumn" prefWidth="174.0" text="نام صاحب حساب" />
+                <TableColumn fx:id="balanceColumn" prefWidth="252.0" text="موجودی" />
+                <TableColumn fx:id="descriptionColumn" minWidth="0.0" prefWidth="256.0" text="توضیحات" />
+            </columns>
+        </TableView>
+        <HBox layoutX="37.0" layoutY="187.0" styleClass="text-arial-black" />
+      <Pane layoutX="356.0" layoutY="82.0" prefHeight="285.0" prefWidth="814.0">
+         <styleClass>
+            <String fx:value="text-arial-black" />
+            <String fx:value="fields-borders" />
+         </styleClass>
+         <children>
+            <Label alignment="CENTER_RIGHT" layoutX="697.0" layoutY="31.0" prefHeight="36.0" prefWidth="101.0" styleClass="text-arial-black" text="نام بانک">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" layoutX="698.0" layoutY="81.0" prefHeight="36.0" prefWidth="101.0" styleClass="text-arial-black" text="شماره حساب">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" layoutX="337.0" layoutY="82.0" prefHeight="36.0" prefWidth="101.0" styleClass="text-arial-black" text="شماره کارت">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" layoutX="375.0" layoutY="35.0" prefHeight="36.0" prefWidth="137.0" styleClass="text-arial-black" text="نام کامل صاحب حساب">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" layoutX="696.0" layoutY="126.0" prefHeight="36.0" prefWidth="101.0" styleClass="text-arial-black" text="موجودی">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" layoutX="697.0" layoutY="173.0" prefHeight="36.0" prefWidth="101.0" styleClass="text-arial-black" text="توضیحات">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="bankNameField" layoutX="526.0" layoutY="37.0" nodeOrientation="RIGHT_TO_LEFT" styleClass="text-arial-black" />
+            <TextField fx:id="accountHolderNameField1" layoutX="81.0" layoutY="40.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="29.0" prefWidth="293.0" styleClass="text-arial-black" />
+            <TextField fx:id="accountNumberField" layoutX="451.0" layoutY="86.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="29.0" prefWidth="245.0" styleClass="text-arial-black" />
+            <TextField fx:id="cardNumberField" layoutX="65.0" layoutY="87.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="29.0" prefWidth="271.0" styleClass="title-text-color" />
+            <TextField fx:id="balanceField1" layoutX="460.0" layoutY="131.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="29.0" prefWidth="237.0" styleClass="text-arial-black" />
+            <TextArea fx:id="descriptionField1" layoutX="60.0" layoutY="173.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="96.0" prefWidth="639.0" styleClass="text-arial-black" />
+         </children>
+      </Pane>
+      <Pane layoutX="11.0" layoutY="83.0" prefHeight="281.0" prefWidth="332.0">
+         <children>
+            <Button fx:id="clear_form" alignment="CENTER" layoutX="175.0" layoutY="126.0" mnemonicParsing="false" onAction="#clearFieledButton" prefHeight="57.0" prefWidth="141.0" style="-fx-background-color: #008000;" styleClass="text-arial-black" text="پاک کردن فرم" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="48.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/clear_icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="saveButton" alignment="CENTER" layoutX="179.0" layoutY="59.0" onAction="#saveBankAccount" prefHeight="57.0" prefWidth="141.0" text="ذخیره">
+               <graphic>
+                  <ImageView fitHeight="48.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/save_icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <styleClass>
+                  <String fx:value="text-arial-black" />
+                  <String fx:value="menubar-text-color" />
+               </styleClass>
+            </Button>
+            <Button fx:id="updateButton" alignment="CENTER" layoutX="11.0" layoutY="59.0" onAction="#updateBankAccount" prefHeight="57.0" prefWidth="141.0" text="بروزرسانی">
+               <styleClass>
+                  <String fx:value="menubar-text-color" />
+                  <String fx:value="text-arial-black" />
+               </styleClass>
+               <graphic>
+                  <ImageView fitHeight="48.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/update_icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="transactionsReportButton" alignment="CENTER" layoutX="14.0" layoutY="127.0" onAction="#transactionsReport" prefHeight="57.0" prefWidth="141.0" text="تراکنش حساب">
+               <styleClass>
+                  <String fx:value="text-arial-black" />
+                  <String fx:value="menubar-text-color" />
+               </styleClass>
+               <graphic>
+                  <ImageView fitHeight="55.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/transactions_icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="reportButton" layoutX="107.0" layoutY="195.0" mnemonicParsing="false" onAction="#printReport" prefHeight="39.0" prefWidth="118.0" text="گزارش">
+               <graphic>
+                  <ImageView fitHeight="48.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/printer_icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+         <styleClass>
+            <String fx:value="fields-borders" />
+            <String fx:value="text-arial-black" />
+         </styleClass>
+      </Pane>
+      <Pane layoutX="14.0" layoutY="15.0" prefHeight="38.0" prefWidth="1252.0" styleClass="sidebar-color">
+         <children>
+            <Label layoutX="1105.0" layoutY="4.0" prefHeight="29.0" prefWidth="137.0" styleClass="text-arial-black" text="نرم افزار حسابداری رازی" />
+            <Label contentDisplay="CENTER" layoutX="592.0" layoutY="-2.0" prefHeight="39.0" prefWidth="137.0" text="حساب های بانکی">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="text-arial-black" />
+                  <String fx:value="title-text-color" />
+               </styleClass>
+            </Label>
+         </children>
+      </Pane>
+      <Button fx:id="move_main" layoutX="1192.0" layoutY="67.0" mnemonicParsing="false" onAction="#moveToMain" prefHeight="32.0" prefWidth="21.0" styleClass="text-arial-black" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/main_icon_stage.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Label alignment="CENTER" layoutX="968.0" layoutY="74.0" prefHeight="20.0" prefWidth="186.0" text="اطلاعات مورد نیاز">
+         <styleClass>
+            <String fx:value="text-arial-black" />
+            <String fx:value="background-color" />
+         </styleClass>
+      </Label>
+      <Label alignment="CENTER" layoutX="211.0" layoutY="75.0" prefHeight="20.0" prefWidth="118.0" text="عملیات">
+         <styleClass>
+            <String fx:value="text-arial-black" />
+            <String fx:value="background-color" />
+         </styleClass>
+      </Label>
+    </children>
+</AnchorPane>

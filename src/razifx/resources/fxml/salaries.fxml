@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" styleClass="background-color" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="razifx.java.view.SalariesController">
+   <children>
+      <Pane layoutX="302.0" layoutY="98.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="504.0" prefWidth="713.0" styleClass="text-arial-black">
+         <children>
+            <TextField fx:id="searchBar" alignment="CENTER_RIGHT" layoutX="98.0" layoutY="63.0" prefHeight="35.0" prefWidth="466.0" promptText="جستجو براساس نام کارمند" styleClass="text-arial-black">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <ListView fx:id="listView" layoutX="98.0" layoutY="108.0" onMouseClicked="#enter_in_leave_registeration" prefHeight="309.0" prefWidth="553.0" styleClass="text-arial-black" />
+            <Button fx:id="search_btn" layoutX="573.0" layoutY="63.0" mnemonicParsing="false" onAction="#search" prefHeight="35.0" prefWidth="78.0" style="-fx-background-color: #008000;" styleClass="text-arial-black" text="جستجو" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Label alignment="CENTER" layoutX="97.0" layoutY="425.0" prefHeight="71.0" prefWidth="563.0" styleClass="text-arial-black" text="برای ثبت حقوق و دستمزد پس از جستجو روی نام کارمند کلیک کنید." />
+         </children>
+      </Pane>
+      <Pane layoutX="13.0" layoutY="15.0" prefHeight="38.0" prefWidth="1252.0" styleClass="sidebar-color">
+         <children>
+            <Label layoutX="1105.0" layoutY="4.0" prefHeight="29.0" prefWidth="137.0" styleClass="text-arial-black" text="نرم افزار حسابداری رازی" />
+            <Label contentDisplay="CENTER" layoutX="542.0" prefHeight="39.0" prefWidth="169.0" text="ثبت حقوق و دستمزد">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="text-arial-black" />
+                  <String fx:value="title-text-color" />
+               </styleClass>
+            </Label>
+         </children>
+      </Pane>
+      <Button fx:id="move_main" layoutX="1191.0" layoutY="67.0" mnemonicParsing="false" onAction="#moveToMain" prefHeight="32.0" prefWidth="21.0" styleClass="text-arial-black" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/main_icon_stage.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+   <stylesheets>
+      <URL value="@../styles/stylesheet.css" />
+      <URL value="@../styles/stylesheet.css" />
+   </stylesheets>
+</AnchorPane>

@@ -1,0 +1,40 @@
+.text-arial-black {
+    -fx-font-family: "Arial Black";
+}
+
+.background-color {
+    -fx-background-color:  "#F7F7F7";
+}
+
+.sidebar-color {
+    -fx-background-color: "#A7D4E9";
+}
+
+.button-color {
+    -fx-background-color: "#015EB8";
+}
+
+.title-text-color {
+    -fx-text-fill: "#174276";
+}
+
+.border-color {
+    -fx-border-color: "#D9DCE0";
+}
+
+.fields-borders {
+    -fx-border-width: 2.5;
+    -fx-border-color: "#D9DCE0";
+}
+
+.hyper-link-color {
+    -fx-text-fill: "#165BA2";
+}
+
+.button-border-remove {
+    -fx-border-style: none;
+ }
+
+.menubar-text-color {
+    -fx-color: "FFFFFF";
+}

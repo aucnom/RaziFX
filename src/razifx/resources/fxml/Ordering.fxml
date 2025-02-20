@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" stylesheets="@../styles/stylesheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="razifx.java.view.OrderingController">
+    <children>
+      <Pane layoutX="14.0" layoutY="14.0" prefHeight="38.0" prefWidth="1252.0">
+         <children>
+            <Label layoutX="1105.0" layoutY="4.0" prefHeight="29.0" prefWidth="137.0" styleClass="text-arial-black" text="نرم افزار حسابداری رازی" />
+            <Label contentDisplay="CENTER" layoutX="591.0" layoutY="1.0" prefHeight="39.0" prefWidth="77.0" text="سفارشات">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="text-arial-black" />
+                  <String fx:value="title-text-color" />
+               </styleClass>
+            </Label>
+         </children>
+         <styleClass>
+            <String fx:value="sidebar-color" />
+            <String fx:value="text-arial-black" />
+         </styleClass>
+      </Pane>
+      <Button fx:id="move_main" layoutX="1203.0" layoutY="75.0" mnemonicParsing="false" onAction="#moveToMain" prefHeight="32.0" prefWidth="21.0" styleClass="text-arial-black" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="31.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/main_icon_stage.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Pane layoutX="111.0" layoutY="125.0" prefHeight="552.0" prefWidth="1096.0">
+         <children>
+                <Label layoutX="976.0" layoutY="142.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="30.0" prefWidth="63.0" styleClass="text-arial-black" text="وضعیت" />
+                <ComboBox fx:id="statusComboBox" layoutX="800.0" layoutY="145.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="15.0" prefWidth="153.0">
+                </ComboBox>
+                <Label layoutX="560.0" layoutY="50.0" prefHeight="31.0" prefWidth="87.0" styleClass="text-arial-black" text="شناسه مشتری" />
+                <TextField fx:id="customerIdField" editable="false" layoutX="462.0" layoutY="51.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="29.0" prefWidth="90.0" promptText="؟" style="-fx-background-color: #FFFFED;" styleClass="text-arial-black" />
+            <Pane layoutX="592.0" layoutY="48.0" prefHeight="38.0" prefWidth="448.0">
+               <children>
+                  <Label layoutX="381.0" layoutY="1.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="32.0" prefWidth="64.0" styleClass="text-arial-black" text="نام مشتری">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="customerNameComboBox" layoutX="122.0" layoutY="1.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="32.0" prefWidth="259.0" styleClass="text-arial-black" />
+                  <Button fx:id="selectCustomerButton" layoutX="68.0" mnemonicParsing="false" onAction="#handleSelectCustomer" prefHeight="12.0" prefWidth="41.0">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/add_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </Pane>
+            <Label layoutX="965.0" layoutY="95.0" prefHeight="32.0" prefWidth="74.0" styleClass="text-arial-black" text="تاریخ سفارش" />
+            <HBox layoutX="699.0" layoutY="97.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="29.0" prefWidth="254.0">
+               <children>
+                  <TextField fx:id="dayOfDateField" prefHeight="30.0" prefWidth="46.0" promptText="روز" />
+                  <ComboBox fx:id="mounthOfDateField" prefHeight="28.0" prefWidth="114.0" promptText="ماه" />
+                  <TextField fx:id="yearOfDateField" prefHeight="40.0" prefWidth="82.0" promptText="سال" />
+               </children>
+            </HBox>
+              <TableView fx:id="ordersTable" layoutX="70.0" layoutY="342.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="167.0" prefWidth="972.0" styleClass="text-arial-black">
+                  <columns>
+                      <TableColumn fx:id="customerIdColumn" prefWidth="478.46337890625" text="نام مشتری" />
+                      <TableColumn fx:id="orderDateColumn" minWidth="0.0" prefWidth="219.53662109375" text="تاریخ سفارش" />
+                      <TableColumn fx:id="statusColumn" prefWidth="273.41455078125" text="وضعیت" />
+                  </columns>
+              </TableView>
+            <Pane layoutX="74.0" layoutY="32.0" prefHeight="281.0" prefWidth="332.0">
+               <children>
+                  <Button fx:id="clear_form" alignment="CENTER" layoutX="175.0" layoutY="126.0" mnemonicParsing="false" onAction="#clearFieledButton" prefHeight="57.0" prefWidth="141.0" style="-fx-background-color: #008000;" styleClass="text-arial-black" text="پاک کردن فرم" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="48.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/clear_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="saveButton" alignment="CENTER" layoutX="177.0" layoutY="59.0" onAction="#saveOrder" prefHeight="57.0" prefWidth="141.0" text="ذخیره">
+                     <graphic>
+                        <ImageView fitHeight="48.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/save_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <styleClass>
+                        <String fx:value="text-arial-black" />
+                        <String fx:value="menubar-text-color" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="updateButton" alignment="CENTER" layoutX="14.0" layoutY="59.0" onAction="#updateOrderStatus" prefHeight="57.0" prefWidth="141.0" text="تغییر وضعیت">
+                     <styleClass>
+                        <String fx:value="menubar-text-color" />
+                        <String fx:value="text-arial-black" />
+                     </styleClass>
+                     <graphic>
+                        <ImageView fitHeight="48.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/update_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="deleteButton" alignment="CENTER" layoutX="14.0" layoutY="127.0" onAction="#deleteOrder" prefHeight="57.0" prefWidth="141.0" text="حذف">
+                     <styleClass>
+                        <String fx:value="text-arial-black" />
+                        <String fx:value="menubar-text-color" />
+                     </styleClass>
+                     <graphic>
+                        <ImageView fitHeight="48.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/delete_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="createInvoiceButton" layoutX="85.0" layoutY="197.0" mnemonicParsing="false" onAction="#createInvoice" prefHeight="57.0" prefWidth="163.0" styleClass="text-arial-black" text="ایجاد فاکتور ">
+                     <graphic>
+                        <ImageView fitHeight="48.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/shopping_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+               <styleClass>
+                  <String fx:value="fields-borders" />
+                  <String fx:value="text-arial-black" />
+               </styleClass>
+            </Pane>
+            <Label alignment="CENTER" layoutX="274.0" layoutY="24.0" prefHeight="20.0" prefWidth="118.0" text="عملیات">
+               <styleClass>
+                  <String fx:value="text-arial-black" />
+                  <String fx:value="background-color" />
+               </styleClass>
+            </Label>
+            <Pane layoutX="416.0" layoutY="240.0" prefHeight="68.0" prefWidth="288.0" style="-fx-background-color: #FFFFFF;">
+               <styleClass>
+                  <String fx:value="text-arial-black" />
+                  <String fx:value="fields-borders" />
+               </styleClass>
+               <children>
+                  <Label alignment="CENTER" layoutX="8.0" layoutY="15.0" prefHeight="20.0" prefWidth="275.0" text="با حذف یک سفارش تمام اطلاعات مربوط به آن " />
+                  <Label alignment="CENTER" layoutX="8.0" layoutY="39.0" prefHeight="20.0" prefWidth="275.0" text="( فاکتور٫ پرداخت ) نیز پاک خواهد شد." />
+               </children>
+            </Pane>
+            <Label alignment="CENTER" layoutX="575.0" layoutY="223.0" prefHeight="20.0" prefWidth="118.0" text="اخطار">
+               <styleClass>
+                  <String fx:value="text-arial-black" />
+                  <String fx:value="background-color" />
+               </styleClass>
+            </Label>
+         </children>
+         <styleClass>
+            <String fx:value="text-arial-black" />
+            <String fx:value="fields-borders" />
+         </styleClass>
+      </Pane>
+      <Label alignment="CENTER" layoutX="988.0" layoutY="113.0" prefHeight="24.0" prefWidth="198.0" text="ساخت سفارش">
+         <styleClass>
+            <String fx:value="text-arial-black" />
+            <String fx:value="background-color" />
+         </styleClass>
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+    </children>
+   <styleClass>
+      <String fx:value="background-color" />
+      <String fx:value="text-arial-black" />
+   </styleClass>
+</AnchorPane>

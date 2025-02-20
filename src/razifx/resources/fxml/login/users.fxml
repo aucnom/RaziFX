@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="350.0" prefWidth="650.0" styleClass="background-color" stylesheets="@../../styles/stylesheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="razifx.java.view.login.UsersController">
+    <children>
+      <Pane layoutY="-1.0" prefHeight="395.0" prefWidth="270.0">
+         <children>
+            <ImageView fitHeight="277.0" fitWidth="268.0" layoutX="1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/hazrat_masoome.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="10.0" layoutY="280.0" text="نرم افزار حسابداری رازی">
+               <font>
+                  <Font size="25.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="text-arial-black" />
+                  <String fx:value="title-text-color" />
+               </styleClass>
+            </Label>
+            <Label layoutX="81.0" layoutY="324.0" text="نسخه آزمایشی">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="text-arial-black" />
+                  <String fx:value="title-text-color" />
+               </styleClass>
+            </Label>
+            <Label fx:id="appVersionLabel" layoutX="117.0" layoutY="354.0" text="ورژن">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="text-arial-black" />
+                  <String fx:value="title-text-color" />
+               </styleClass>
+            </Label>
+         </children>
+         <styleClass>
+            <String fx:value="sidebar-color" />
+            <String fx:value="text-arial-black" />
+         </styleClass>
+      </Pane>
+      <Pane layoutX="294.0" layoutY="29.0" prefHeight="301.0" prefWidth="342.0">
+         <children>
+                <TextField fx:id="usernameField" alignment="CENTER_RIGHT" layoutX="26.0" layoutY="95.0" prefHeight="38.0" prefWidth="291.0" promptText="نام کاربری" styleClass="text-arial-black" />
+                <PasswordField fx:id="passwordField" alignment="CENTER_RIGHT" layoutX="26.0" layoutY="138.0" prefHeight="38.0" prefWidth="291.0" promptText="رمز عبور" styleClass="text-arial-black" />
+                <Button fx:id="signInButton" layoutX="26.0" layoutY="194.0" onAction="#signIn" prefHeight="45.0" prefWidth="291.0" text="ورود به نرم افزار" textFill="WHITE">
+               <styleClass>
+                  <String fx:value="button-color" />
+                  <String fx:value="text-arial-black" />
+               </styleClass>
+            </Button>
+            <ImageView fitHeight="94.0" fitWidth="113.0" layoutX="245.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/login_icon.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="66.0" layoutY="42.0" styleClass="text-arial-black" text="ورود به نرم افزار">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Button fx:id="moveToSignUp" alignment="CENTER" layoutX="176.0" layoutY="248.0" mnemonicParsing="false" onAction="#handleMoveToSignUp" style="-fx-border-style: none;" text="حساب کاربری ندارید؟ کلیک کن" underline="true">
+               <styleClass>
+                  <String fx:value="text-arial-black" />
+                  <String fx:value="background-color" />
+                  <String fx:value="hyper-link-color" />
+               </styleClass>
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+         </children>
+         <styleClass>
+            <String fx:value="text-arial-black" />
+            <String fx:value="border-color" />
+         </styleClass>
+      </Pane>
+    </children>
+</AnchorPane>

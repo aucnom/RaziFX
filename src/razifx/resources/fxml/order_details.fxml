@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" styleClass="background-color" stylesheets="@../styles/stylesheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="razifx.java.view.OrderDetailController">
+    <children>
+        <TableView fx:id="orderDetailsTable" layoutX="13.0" layoutY="-15.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="720.0" prefWidth="503.0" styleClass="text-arial-black" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="700.0" AnchorPane.topAnchor="0.0">
+            <columns>
+                <TableColumn fx:id="orderIdColumn" prefWidth="92.7772216796875" text="شناسه سفارش" />
+                <TableColumn fx:id="productIdColumn" prefWidth="205.72274780273438" text="نام محصول" />
+                <TableColumn fx:id="quantityColumn" prefWidth="84.55349731445312" text="تعداد" />
+                <TableColumn fx:id="unitPriceColumn" prefWidth="195.66058349609375" text="قیمت واحد" />
+            </columns>
+        </TableView>
+        <GridPane hgap="10.0" layoutX="893.0" layoutY="118.0" nodeOrientation="RIGHT_TO_LEFT" styleClass="text-arial-black" vgap="10.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="200.0" prefWidth="200.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label prefHeight="42.0" prefWidth="100.0" styleClass="text-arial-black" text="شناسه سفارش" GridPane.columnIndex="0" GridPane.rowIndex="0">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+                <TextField fx:id="orderIdField" editable="false" styleClass="text-arial-black" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <Label prefHeight="65.0" prefWidth="100.0" styleClass="text-arial-black" text="شناسه محصول" GridPane.columnIndex="0" GridPane.rowIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+                <TextField fx:id="productIdField" editable="false" styleClass="text-arial-black" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label prefHeight="62.0" prefWidth="100.0" styleClass="text-arial-black" text="تعداد" GridPane.columnIndex="0" GridPane.rowIndex="2">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+            <Spinner fx:id="quantityField" editable="true" prefHeight="29.0" prefWidth="177.0" styleClass="text-arial-black" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            </children>
+        </GridPane>
+      <Label layoutX="1094.0" layoutY="65.0" prefHeight="40.0" prefWidth="114.0" styleClass="text-arial-black" text="سبد خرید">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <Pane layoutX="598.0" layoutY="18.0" prefHeight="35.0" prefWidth="666.0" style="-fx-background-color: #40a8f7;">
+         <children>
+            <Label layoutX="441.0" layoutY="1.0" prefHeight="29.0" prefWidth="137.0" styleClass="text-arial-black" text="نرم افزار حسابداری رازی" textFill="WHITE" />
+            <Button fx:id="move_main" layoutX="590.0" layoutY="2.0" mnemonicParsing="false" onAction="#moveToMain" style="-fx-background-radius: 180; -fx-background-color: #FF0000;" styleClass="text-arial-black" text="بازگشت" textFill="WHITE" />
+         </children>
+      </Pane>
+      <Pane layoutX="733.0" layoutY="231.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="387.0" prefWidth="485.0" styleClass="text-arial-black">
+         <children>
+            <TextField fx:id="searchBar" alignment="CENTER_RIGHT" layoutX="17.0" layoutY="17.0" prefHeight="35.0" prefWidth="375.0" promptText="جستجو براساس نام کارمند" styleClass="text-arial-black">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <ListView fx:id="listView" layoutX="18.0" layoutY="67.0" onMouseClicked="#getSelectedProductId" prefHeight="269.0" prefWidth="461.0" styleClass="text-arial-black" />
+            <Button fx:id="search_btn" layoutX="401.0" layoutY="17.0" mnemonicParsing="false" onAction="#search" prefHeight="35.0" prefWidth="78.0" style="-fx-background-color: #008000;" styleClass="text-arial-black" text="جستجو" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+              <HBox layoutX="19.0" layoutY="343.0">
+                  <children>
+                      <Button fx:id="saveOrderDetailButton" onAction="#saveOrderDetail" style="-fx-background-color: #9b7dc7;" styleClass="text-arial-black" text="افزودن" textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                      <Button fx:id="deleteOrderDetailButton" onAction="#deleteOrderDetail" style="-fx-background-color: #9b7dc7;" styleClass="text-arial-black" text="حذف" textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  </children>
+              </HBox>
+         </children>
+      </Pane>
+    </children>
+</AnchorPane>

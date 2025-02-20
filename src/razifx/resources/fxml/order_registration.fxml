@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../styles/stylesheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="razifx.java.view.OrderRegistrationController">
+   <styleClass>
+      <String fx:value="background-color" />
+      <String fx:value="text-arial-black" />
+   </styleClass>
+   <children>
+      <Pane layoutX="14.0" layoutY="15.0" prefHeight="38.0" prefWidth="1252.0" styleClass="sidebar-color">
+         <children>
+            <Label layoutX="1105.0" layoutY="4.0" prefHeight="29.0" prefWidth="137.0" styleClass="text-arial-black" text="نرم افزار حسابداری رازی" />
+            <Label contentDisplay="CENTER" layoutX="572.0" prefHeight="39.0" prefWidth="107.0" text="فاکتور فروش">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="text-arial-black" />
+                  <String fx:value="title-text-color" />
+               </styleClass>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="12.0" layoutY="100.0" prefHeight="557.0" prefWidth="1252.0">
+         <children>
+            <Pane layoutX="764.0" layoutY="83.0" prefHeight="35.0" prefWidth="443.0" styleClass="text-arial-black">
+               <children>
+                  <Label layoutX="379.0" layoutY="1.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="32.0" prefWidth="64.0" styleClass="text-arial-black" text="نام کالا">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="productNameComboBox" layoutX="120.0" layoutY="1.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="32.0" prefWidth="259.0" styleClass="text-arial-black" />
+                  <Button fx:id="selectProductButton" layoutX="67.0" layoutY="1.0" mnemonicParsing="false" onAction="#handleSelectProduct" prefHeight="12.0" prefWidth="41.0">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/add_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane layoutX="371.0" layoutY="32.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="99.0" prefWidth="336.0" styleClass="text-arial-black">
+               <children>
+                  <Label layoutX="13.0" layoutY="52.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="35.0" prefWidth="99.0" styleClass="text-arial-black" text="قیمت واحد (فی)">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="13.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="35.0" prefWidth="99.0" styleClass="text-arial-black" text="تعداد / مقدار">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="quantityTextField" layoutX="113.0" layoutY="14.0" prefHeight="29.0" prefWidth="174.0" styleClass="text-arial-black" />
+                  <TextField fx:id="unitPriceTextField" editable="false" layoutX="114.0" layoutY="57.0" prefHeight="29.0" prefWidth="173.0" styleClass="text-arial-black" />
+                  <Label layoutX="292.0" layoutY="55.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="35.0" prefWidth="30.0" styleClass="text-arial-black" text="ریال">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="83.0" layoutY="36.0" prefHeight="93.0" prefWidth="158.0">
+               <children>
+                  <Button fx:id="addProductToTableButton" layoutX="18.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleAddProductToTable" prefHeight="29.0" prefWidth="125.0" text="اضافه کردن" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="text-arial-black" />
+                        <String fx:value="button-color" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="removeProductFromTableButton" layoutX="17.0" layoutY="51.0" mnemonicParsing="false" onAction="#handleRemoveProductFromTable" prefHeight="29.0" prefWidth="125.0" text="حذف" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="text-arial-black" />
+                        <String fx:value="button-color" />
+                     </styleClass>
+                  </Button>
+               </children>
+            </Pane>
+            <TextField fx:id="productIdTextField" editable="false" layoutX="884.0" layoutY="42.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="29.0" prefWidth="80.0" promptText="؟" style="-fx-background-color: #FFFFED;" styleClass="text-arial-black" />
+            <Label layoutX="975.0" layoutY="40.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="32.0" prefWidth="64.0" styleClass="text-arial-black" text="شناسه کالا">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="submitButton" layoutX="37.0" layoutY="454.0" mnemonicParsing="false" onAction="#registerationOrder" prefHeight="29.0" prefWidth="125.0" text="ثبت" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="text-arial-black" />
+                  <String fx:value="button-color" />
+               </styleClass>
+            </Button>
+            <Button fx:id="move_main" layoutX="170.0" layoutY="454.0" mnemonicParsing="false" onAction="#moveToMain" prefHeight="29.0" prefWidth="125.0" style="-fx-background-color: #FF8D91;" styleClass="text-arial-black" text="انصراف" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Pane layoutX="853.0" layoutY="168.0" prefHeight="219.0" prefWidth="380.0">
+               <styleClass>
+                  <String fx:value="fields-borders" />
+                  <String fx:value="text-arial-black" />
+               </styleClass>
+               <children>
+                  <GridPane alignment="CENTER" layoutX="26.0" layoutY="25.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="171.0" prefWidth="329.0" styleClass="text-arial-black">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="304.0" minWidth="10.0" prefWidth="86.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="378.0" minWidth="10.0" prefWidth="243.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label prefHeight="25.0" prefWidth="332.0" styleClass="text-arial-black" text="شناسه مشتری" />
+                        <Label prefHeight="25.0" prefWidth="332.0" styleClass="text-arial-black" text="نام" GridPane.rowIndex="1" />
+                        <Label prefHeight="25.0" prefWidth="332.0" styleClass="text-arial-black" text="نام خانوادگی" GridPane.rowIndex="2" />
+                        <Label prefHeight="25.0" prefWidth="332.0" styleClass="text-arial-black" text="شماره ملی" GridPane.rowIndex="3" />
+                        <Label prefHeight="25.0" prefWidth="332.0" styleClass="text-arial-black" text="شماره تماس" GridPane.rowIndex="4" />
+                        <TextField fx:id="customerIdTextField" editable="false" styleClass="text-arial-black" GridPane.columnIndex="1" />
+                        <TextField fx:id="firstNameCustomerTextField" editable="false" styleClass="text-arial-black" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="lastNameCustomerTextField" editable="false" styleClass="text-arial-black" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="nationalIdCustomerTextField" editable="false" styleClass="text-arial-black" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="phoneNumberCustomerTextField" editable="false" styleClass="text-arial-black" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label prefHeight="25.0" prefWidth="332.0" styleClass="text-arial-black" text="شناسه سفارش" GridPane.rowIndex="5" />
+                        <Label prefHeight="25.0" prefWidth="332.0" styleClass="text-arial-black" text="تاریخ سفارش" GridPane.rowIndex="6" />
+                        <TextField fx:id="orderIdTextField" editable="false" styleClass="text-arial-black" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <TextField fx:id="orderDateTextField" editable="false" styleClass="text-arial-black" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                     </children>
+                  </GridPane>
+               </children>
+            </Pane>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1062.0" layoutY="157.0" prefHeight="24.0" prefWidth="158.0" text="اطلاعات سفارش">
+               <styleClass>
+                  <String fx:value="text-arial-black" />
+                  <String fx:value="background-color" />
+               </styleClass>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TableView fx:id="orderDetailsTable" layoutX="31.0" layoutY="168.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="219.0" prefWidth="807.0" styleClass="text-arial-black">
+               <columns>
+                  <TableColumn fx:id="orderIdColumn" prefWidth="86.322998046875" text="شناسه سفارش" />
+                  <TableColumn fx:id="productIdColumn" prefWidth="341.4132995605469" text="محصول / خدمات" />
+                  <TableColumn fx:id="quantityColumn" prefWidth="93.61526489257812" text="تعداد / مقدار" />
+                  <TableColumn fx:id="unitPriceColumn" prefWidth="260.384765625" text="قیمت واحد" />
+               </columns>
+            </TableView>
+            <Button fx:id="reportButton" layoutX="37.0" layoutY="408.0" mnemonicParsing="false" onAction="#printReport" prefHeight="39.0" prefWidth="259.0" text="چاپ فاکتور">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/printer_icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+         <styleClass>
+            <String fx:value="text-arial-black" />
+            <String fx:value="fields-borders" />
+         </styleClass>
+      </Pane>
+      <Label alignment="CENTER" layoutX="1058.0" layoutY="90.0" prefHeight="24.0" prefWidth="192.0" text="ثبت فاکتور جدید">
+         <styleClass>
+            <String fx:value="text-arial-black" />
+            <String fx:value="background-color" />
+         </styleClass>
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" stylesheets="@../styles/stylesheet.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="razifx.java.view.AboutController">
+   <Pane layoutX="430.0" layoutY="73.0" prefHeight="489.0" prefWidth="410.0">
+      <children>
+      
+          <ImageView fitHeight="147.0" fitWidth="143.0" layoutX="137.0" layoutY="19.0">
+            <image>
+               <Image url="@../images/money_icon.png" />
+            </image>
+         </ImageView>
+      
+          <Label layoutX="89.0" layoutY="176.0" styleClass="text-arial-black" text="نرم افزار حسابداری رازی">
+            <font>
+               <Font size="24.0" />
+            </font>
+         </Label>
+      
+          <Label layoutX="214.0" layoutY="235.0" styleClass="text-arial-black" text="نسخه ">
+            <font>
+               <Font size="24.0" />
+            </font>
+         </Label>
+      
+          <Label layoutX="28.0" layoutY="280.0" prefHeight="42.0" prefWidth="363.0" styleClass="text-arial-black" text="Cross-Platform Desktop Application">
+            <font>
+               <Font size="18.0" />
+            </font>
+         </Label>
+         <Label fx:id="appVersionLabel" alignment="CENTER" layoutX="92.0" layoutY="235.0" prefHeight="34.0" prefWidth="117.0" styleClass="text-arial-black" text="نسخه ">
+            <font>
+               <Font size="24.0" />
+            </font>
+         </Label>
+         <Label layoutX="212.0" layoutY="322.0" prefHeight="34.0" prefWidth="137.0" styleClass="text-arial-black" text="قدرت گرفته شده توسط">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Label>
+         <Label layoutX="62.0" layoutY="322.0" prefHeight="34.0" prefWidth="151.0" styleClass="text-arial-black" text="Azul JDK 8.82.0.21">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Label>
+         <ImageView fitHeight="42.0" fitWidth="66.0" layoutX="104.0" layoutY="356.0">
+            <image>
+               <Image url="@../images/MIT-logo.png" />
+            </image>
+         </ImageView>
+         <Label layoutX="183.0" layoutY="360.0" prefHeight="34.0" prefWidth="129.0" styleClass="text-arial-black" text="The MIT License">
+            <font>
+               <Font size="14.0" />
+            </font>
+         </Label>
+         <Label layoutX="99.0" layoutY="398.0" prefHeight="34.0" prefWidth="230.0" styleClass="text-arial-black" text="Copyright (c) 2025 Mahdi HOSEIN ZADE.">
+            <font>
+               <Font size="10.0" />
+            </font>
+         </Label>
+         <Label layoutX="20.0" layoutY="432.0" prefHeight="37.0" prefWidth="371.0" styleClass="text-arial-black" text="استفاده از این نرم افزار کاملا رایگان و تحت لایسنس MIT می باشد." />
+      </children>
+      <styleClass>
+         <String fx:value="text-arial-black" />
+         <String fx:value="fields-borders" />
+      </styleClass>
+   </Pane>
+   <Button fx:id="move_main" alignment="CENTER" layoutX="611.0" layoutY="585.0" mnemonicParsing="false" onAction="#moveToMain" prefHeight="46.0" prefWidth="51.0" styleClass="text-arial-black" textFill="WHITE">
+      <font>
+         <Font size="20.0" />
+      </font>
+      <graphic>
+         <ImageView fitHeight="33.0" fitWidth="31.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../images/main_icon_stage.png" />
+            </image>
+         </ImageView>
+      </graphic>
+   </Button>
+   <Label alignment="CENTER" layoutX="712.0" layoutY="65.0" prefHeight="20.0" prefWidth="117.0" text="درباره نرم افزار">
+      <styleClass>
+         <String fx:value="background-color" />
+         <String fx:value="text-arial-black" />
+      </styleClass>
+   </Label>
+   <Pane layoutX="930.0" layoutY="76.0" prefHeight="208.0" prefWidth="315.0" styleClass="fields-borders">
+      <children>
+         <Pane layoutX="18.0" layoutY="18.0" prefHeight="178.0" prefWidth="279.0">
+            <children>
+               <Hyperlink fx:id="emailLink" layoutX="55.0" layoutY="115.0" onAction="#openNewEmail" prefHeight="23.0" prefWidth="220.0" styleClass="text-arial-black" text="mahdihoseinzade.jk@yahoo.com">
+                  <font>
+                     <Font size="12.0" />
+                  </font>
+               </Hyperlink>
+               <Hyperlink fx:id="telegramLink" layoutX="59.0" layoutY="141.0" onAction="#openTelegram" styleClass="text-arial-black" text="https://t.me/aucnom">
+                  <font>
+                     <Font size="12.0" />
+                  </font>
+               </Hyperlink>
+               <Label layoutX="20.0" layoutY="47.0" prefHeight="26.0" prefWidth="245.0" styleClass="text-arial-black" text="لطفآ نظرات، پیشنهادات، انتقادات یا گزارش خطا">
+                  <font>
+                     <Font size="12.0" />
+                  </font>
+               </Label>
+               <Label layoutX="62.0" layoutY="77.0" prefHeight="26.0" prefWidth="164.0" styleClass="text-arial-black" text="و باگ را با بنده درمیان بگذارید.">
+                  <font>
+                     <Font size="12.0" />
+                  </font>
+               </Label>
+               <ImageView fitHeight="26.0" fitWidth="22.0" layoutX="20.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../images/mailing_icon.png" />
+                  </image>
+               </ImageView>
+               <ImageView fitHeight="26.0" fitWidth="41.0" layoutX="11.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../images/telegram_icon.png" />
+                  </image>
+               </ImageView>
+            </children>
+            <styleClass>
+               <String fx:value="background-color" />
+               <String fx:value="text-arial-black" />
+               <String fx:value="fields-borders" />
+            </styleClass>
+         </Pane>
+      </children>
+   </Pane>
+   <Label alignment="CENTER" layoutX="1095.0" layoutY="68.0" prefHeight="16.0" prefWidth="130.0" text="راه های ارتباطی">
+      <styleClass>
+         <String fx:value="text-arial-black" />
+         <String fx:value="background-color" />
+      </styleClass>
+   </Label>
+   <styleClass>
+      <String fx:value="background-color" />
+      <String fx:value="text-arial-black" />
+   </styleClass>
+
+</AnchorPane>
